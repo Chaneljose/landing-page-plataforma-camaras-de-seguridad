@@ -127,6 +127,23 @@
   </style>
 </head>
 <body>
-  <h1>Bienvenido a Git & Github</h1>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="MIVAVISION, inicio">
+        <span class="brand-mark">◈</span>
+        <span>MIVAVISION<small>Tu seguridad, nuestra prioridad</small></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Inicio</a>
+        <a href="#camaras">Cámaras</a>
+        <a href="#ofertas">Ofertas</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="cart-button" aria-label="Ver carrito" onclick="showCart()">🛒 <span class="cart-count" id="cartCount">0</span></button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
 </body>
 </html>
