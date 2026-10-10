@@ -145,5 +145,54 @@
       </div>
     </div>
   </header>
+  <footer id="contacto">
+    <div class="container footer-inner">
+      <a class="brand" href="#inicio"><span class="brand-mark">◈</span><span>MIVAVISION<small>Tu seguridad, nuestra prioridad</small></span></a>
+      <nav class="footer-links"><a href="#inicio">Inicio</a><a href="#camaras">Cámaras</a><a href="#ofertas">Ofertas</a><a href="https://wa.me/59170000000" target="_blank" rel="noopener">WhatsApp</a></nav>
+      <div class="copyright">© <span id="year"></span> MIVAVISION. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const cart = [];
+    const cartCount = document.getElementById('cartCount');
+    const toast = document.getElementById('toast');
+
+    function notify(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      window.clearTimeout(notify.timer);
+      notify.timer = window.setTimeout(() => toast.classList.remove('show'), 2600);
+    }
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      cartCount.textContent = cart.length;
+      notify(name + ' agregado al carrito');
+    }
+    function showCart() {
+      if (!cart.length) {
+        notify('Tu carrito está vacío. Explora nuestros modelos.');
+        return;
+      }
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+      const lines = cart.map(item => '• ' + item.name + ' — Bs ' + item.price).join('\n');
+      const message = 'Hola, quiero consultar por estos productos:\n' + lines + '\nTotal referencial: Bs ' + total;
+      notify('Total del carrito: Bs ' + total);
+      // Cambia el número de WhatsApp por el de tu negocio, con código de país y sin + ni espacios.
+      const whatsappNumber = '59170000000';
+      window.open('https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(message), '_blank', 'noopener');
+    }
+    document.getElementById('menuToggle').addEventListener('click', () => {
+      const links = document.getElementById('navLinks');
+      const opened = links.classList.toggle('open');
+      document.getElementById('menuToggle').setAttribute('aria-expanded', String(opened));
+    });
+    document.querySelectorAll('#navLinks a').forEach(link => link.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+      document.getElementById('menuToggle').setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
