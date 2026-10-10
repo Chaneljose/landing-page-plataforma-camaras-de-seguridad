@@ -3,7 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta name="description" content="Cámaras de seguridad para tu hogar y negocio. Encuentra tu cámara ideal en MIVAVISION.">
+  <title>MIVAVISION | Cámaras de seguridad</title>
+  <style>
+    :root {
+      --blue: #0878f9;
+      --blue-dark: #0759bf;
+      --navy: #08213a;
+      --text: #10243b;
+      --muted: #617187;
+      --line: #dce5ef;
+      --light: #f4f8fc;
+      --white: #fff;
+      --radius: 18px;
+      --shadow: 0 10px 28px rgba(8, 33, 58, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, "Segoe UI", Arial, sans-serif; color: var(--text); background: #fff; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.96); backdrop-filter: blur(12px); border-bottom: 1px solid #e8edf3; }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 850; font-size: 1.45rem; letter-spacing: -.7px; }
+    .brand-mark { width: 43px; height: 43px; display: grid; place-items: center; border-radius: 13px; color: #fff; background: linear-gradient(145deg, #1592ff, #0754c6); box-shadow: 0 7px 15px #0878f933; }
+    .brand small { display: block; font-size: .72rem; letter-spacing: 0; font-weight: 500; color: var(--muted); margin-top: 2px; }
+    .nav-links { display: flex; align-items: center; gap: 32px; font-size: .95rem; }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-actions { display: flex; align-items: center; gap: 14px; }
+    .cart-button { border: 1px solid var(--line); background: white; color: var(--navy); border-radius: 12px; padding: 10px 13px; }
+    .cart-count { display: inline-grid; place-items: center; background: var(--blue); color: white; width: 22px; height: 22px; border-radius: 50%; font-size: .75rem; margin-left: 5px; }
+    .menu-toggle { display: none; border: 0; background: transparent; font-size: 1.5rem; }
+    .hero { color: white; background: linear-gradient(90deg, rgba(5,28,49,.97) 0%, rgba(5,28,49,.88) 43%, rgba(5,28,49,.2) 100%), url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85") center/cover; }
+    .hero-inner { min-height: 440px; display: flex; align-items: center; padding: 60px 0; }
+    .hero-copy { max-width: 620px; }
+    .eyebrow { display: inline-flex; padding: 7px 13px; border-radius: 999px; background: #0878f9; color: white; font-size: .8rem; font-weight: 800; letter-spacing: .5px; text-transform: uppercase; }
+    h1 { margin: 18px 0 15px; font-size: clamp(2.5rem, 5vw, 4.35rem); line-height: 1.03; letter-spacing: -2px; }
+    h1 span { color: #2190ff; }
+    .hero p { color: #e1eaf4; font-size: 1.12rem; line-height: 1.65; max-width: 540px; }
+    .hero-points { display: flex; flex-wrap: wrap; gap: 22px; margin: 25px 0 30px; font-size: .88rem; }
+    .hero-points span { display: flex; align-items: center; gap: 9px; }
+    .point-icon { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: white; color: var(--blue); font-weight: 900; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 0; border-radius: 12px; padding: 13px 20px; font-weight: 750; transition: .2s ease; }
+    .btn-primary { background: var(--blue); color: white; box-shadow: 0 8px 18px #0878f933; }
+    .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    .benefits { background: #f7fafd; border-bottom: 1px solid #e9eff5; }
+    .benefit-grid { display: grid; grid-template-columns: repeat(4, 1fr); padding: 24px 0; }
+    .benefit { display: flex; gap: 13px; align-items: center; padding: 4px 22px; border-right: 1px solid var(--line); }
+    .benefit:first-child { padding-left: 0; }
+    .benefit:last-child { border: 0; }
+    .benefit-icon { color: var(--blue); font-size: 1.7rem; }
+    .benefit strong { display: block; font-size: .9rem; }
+    .benefit small { color: var(--muted); display: block; margin-top: 4px; font-size: .8rem; }
+    section { padding: 58px 0; }
+    .section-kicker { color: var(--blue); font-size: .8rem; font-weight: 850; text-transform: uppercase; letter-spacing: .5px; }
+    h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); letter-spacing: -1px; margin: 8px 0; }
+    .section-intro { color: var(--muted); margin: 0 0 28px; line-height: 1.6; }
+    .products { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .product-card { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: white; transition: .2s ease; }
+    .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .product-image { height: 205px; background: linear-gradient(145deg, #f7fafc, #eaf1f8); display: grid; place-items: center; position: relative; padding: 16px; }
+    .product-image img { max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply; }
+    .tag { position: absolute; top: 13px; left: 13px; color: white; background: var(--blue); border-radius: 7px; padding: 5px 9px; font-size: .7rem; font-weight: 800; }
+    .tag.green { background: #10a866; }
+    .tag.purple { background: #7a3fe0; }
+    .product-content { padding: 17px; }
+    .product-content h3 { margin: 0 0 5px; font-size: 1rem; }
+    .product-sub { color: var(--muted); font-size: .82rem; margin: 0 0 13px; }
+    .specs { display: grid; gap: 8px; margin: 14px 0 17px; color: #465970; font-size: .79rem; }
+    .specs span::before { content: "✓"; color: var(--blue); font-weight: 900; margin-right: 8px; }
+    .price { font-size: 1.45rem; color: var(--blue); font-weight: 900; margin: 12px 0; }
+    .add-cart { width: 100%; padding: 11px 10px; font-size: .84rem; }
+    .app-banner { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 25px; align-items: center; padding: 25px; border-radius: var(--radius); background: linear-gradient(120deg, #e8f3ff, #f7fbff); }
+    .app-photo { min-height: 210px; height: 100%; border-radius: 13px; background: url("https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=800&q=80") center/cover; }
+    .app-banner h2 { font-size: 1.6rem; }
+    .app-banner p { color: var(--muted); line-height: 1.6; font-size: .9rem; }
+    .app-checks { border-left: 1px solid #d4e2f0; padding-left: 24px; display: grid; gap: 13px; font-size: .85rem; }
+    .app-checks span::before { content: "●"; color: var(--blue); margin-right: 9px; }
+    footer { background: #071f37; color: white; padding: 30px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    footer .brand small { color: #c1d0df; }
+    .footer-links { display: flex; gap: 22px; font-size: .88rem; color: #d6e1ec; }
+    .copyright { color: #b6c6d7; font-size: .78rem; }
+    .toast { position: fixed; right: 20px; bottom: 20px; z-index: 50; background: var(--navy); color: white; padding: 14px 18px; border-radius: 12px; box-shadow: var(--shadow); opacity: 0; transform: translateY(12px); pointer-events: none; transition: .25s; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    @media (max-width: 950px) {
+      .products { grid-template-columns: repeat(2, 1fr); }
+      .benefit-grid { grid-template-columns: repeat(2, 1fr); gap: 18px 0; }
+      .benefit:nth-child(2) { border-right: 0; }
+      .app-banner { grid-template-columns: 1fr 1fr; }
+      .app-photo { min-height: 220px; }
+      .app-checks { grid-column: 1 / -1; border-left: 0; border-top: 1px solid #d4e2f0; padding: 18px 0 0; grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 650px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .nav { min-height: 68px; }
+      .brand { font-size: 1.15rem; }
+      .brand-mark { width: 38px; height: 38px; }
+      .menu-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 68px; left: 0; right: 0; background: white; padding: 18px 24px; border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; gap: 18px; }
+      .nav-links.open { display: flex; }
+      .hero-inner { min-height: 430px; padding: 48px 0; }
+      h1 { letter-spacing: -1px; }
+      .hero-points { gap: 13px; }
+      .benefit-grid { grid-template-columns: 1fr 1fr; }
+      .benefit { padding: 4px 10px; }
+      .benefit:first-child { padding-left: 0; }
+      .benefit strong { font-size: .8rem; }
+      .benefit small { font-size: .72rem; }
+      section { padding: 42px 0; }
+      .products { grid-template-columns: 1fr; }
+      .product-card { display: grid; grid-template-columns: 125px 1fr; }
+      .product-image { height: 100%; min-height: 250px; padding: 8px; }
+      .product-content { padding: 14px; }
+      .specs { gap: 6px; font-size: .76rem; }
+      .app-banner { grid-template-columns: 1fr; padding: 16px; }
+      .app-photo { min-height: 170px; }
+      .app-checks { grid-template-columns: 1fr; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .footer-links { flex-wrap: wrap; }
+    }
+  </style>
 </head>
 <body>
   <h1>Bienvenido a Git & Github</h1>
