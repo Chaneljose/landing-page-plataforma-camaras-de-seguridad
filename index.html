@@ -35,7 +35,7 @@
     .cart-button { border: 1px solid var(--line); background: white; color: var(--navy); border-radius: 12px; padding: 10px 13px; }
     .cart-count { display: inline-grid; place-items: center; background: var(--blue); color: white; width: 22px; height: 22px; border-radius: 50%; font-size: .75rem; margin-left: 5px; }
     .menu-toggle { display: none; border: 0; background: transparent; font-size: 1.5rem; }
-    .hero { color: white; background: linear-gradient(90deg, rgba(5,28,49,.97) 0%, rgba(5,28,49,.88) 43%, rgba(5,28,49,.2) 100%), url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85") center/cover; }
+    .hero { color: white; background: linear-gradient(90deg, rgba(5,28,49,.97) 0%, rgba(5,28,49,.88) 43%, rgba(5,28,49,.2) 100%), url("imagen/portal_camaras.png") center/cover; }
     .hero-inner { min-height: 440px; display: flex; align-items: center; padding: 60px 0; }
     .hero-copy { max-width: 620px; }
     .eyebrow { display: inline-flex; padding: 7px 13px; border-radius: 999px; background: #0878f9; color: white; font-size: .8rem; font-weight: 800; letter-spacing: .5px; text-transform: uppercase; }
@@ -76,7 +76,7 @@
     .price { font-size: 1.45rem; color: var(--blue); font-weight: 900; margin: 12px 0; }
     .add-cart { width: 100%; padding: 11px 10px; font-size: .84rem; }
     .app-banner { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 25px; align-items: center; padding: 25px; border-radius: var(--radius); background: linear-gradient(120deg, #e8f3ff, #f7fbff); }
-    .app-photo { min-height: 210px; height: 100%; border-radius: 13px; background: url("https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=800&q=80") center/cover; }
+    .app-photo { min-height: 210px; height: 100%; border-radius: 13px; background: url("imagen/dahua-dmss-app.jpg") center/cover; }
     .app-banner h2 { font-size: 1.6rem; }
     .app-banner p { color: var(--muted); line-height: 1.6; font-size: .9rem; }
     .app-checks { border-left: 1px solid #d4e2f0; padding-left: 24px; display: grid; gap: 13px; font-size: .85rem; }
@@ -145,6 +145,67 @@
       </div>
     </div>
   </header>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">Cámaras de seguridad</span>
+          <h1>Protege <span>lo que</span><br><span>más te importa</span></h1>
+          <p>Vigila tu hogar, negocio o familia con nuestras cámaras de seguridad de alta calidad.</p>
+          <div class="hero-points">
+            <span><i class="point-icon">✓</i> Alta definición</span>
+            <span><i class="point-icon">↗</i> Acceso remoto</span>
+            <span><i class="point-icon">☾</i> Visión nocturna</span>
+          </div>
+          <a class="btn btn-primary" href="#camaras">Ver cámaras <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <div class="benefits">
+      <div class="container benefit-grid">
+        <div class="benefit"><span class="benefit-icon">🚚</span><div><strong>Envíos a todo el país</strong><small>Rápidos y seguros</small></div></div>
+        <div class="benefit"><span class="benefit-icon">♢</span><div><strong>Compra segura</strong><small>Atención personalizada</small></div></div>
+        <div class="benefit"><span class="benefit-icon">♧</span><div><strong>Te asesoramos</strong><small>Encuentra la cámara ideal</small></div></div>
+        <div class="benefit"><span class="benefit-icon">▤</span><div><strong>Varias formas de pago</strong><small>Consulta las opciones</small></div></div>
+      </div>
+    </div>
+
+    <section id="camaras">
+      <div class="container">
+        <span class="section-kicker">Nuestras cámaras</span>
+        <h2>Modelos destacados</h2>
+        <p class="section-intro">Encuentra la cámara ideal para tu espacio, con la mejor tecnología y al mejor precio.</p>
+        <div class="products">
+          <article class="product-card">
+            <div class="product-image"><span class="tag">Más vendido</span><img src="imagen/camara_dimax_cubo_smart_3mp.png" alt="Cámara de seguridad compacta"></div>
+            <div class="product-content"><h3>Cámara Cubo Smart G103</h3><p class="product-sub">Ideal para interiores</p><div class="specs"><span>3 MP (alta resolución)</span><span>Audio bidireccional</span><span>Detección de movimiento</span><span>Ángulo de visión 100°</span><span>Almacenamiento hasta 128 GB</span><span>Visión nocturna IR 10 m</span></div><div class="price">Bs 320</div><button class="btn btn-primary add-cart" onclick="addToCart('Cámara Cubo Smart G103',320)">🛒 Agregar al carrito</button></div>
+          </article>
+          <article class="product-card">
+            <div class="product-image"><span class="tag green">Recomendada</span><img src="imagen/camara_ptz_smart_G104.jpg" alt="Cámara de seguridad Wi-Fi"></div>
+            <div class="product-content"><h3>Cámara PTZ WiFi</h3><p class="product-sub">Cobertura para tu hogar</p><div class="specs"><span>3 MP (alta resolución)</span><span>Pan &amp; Tilt</span><span>Audio bidireccional</span><span>Detección de movimiento</span><span>Visión nocturna</span><span>Control desde app</span></div><div class="price">Bs 450</div><button class="btn btn-primary add-cart" onclick="addToCart('Cámara PTZ WiFi',450)">🛒 Agregar al carrito</button></div>
+          </article>
+          <article class="product-card">
+            <div class="product-image"><img src="imagen/camara_exterior_G122.png" alt="Cámara de seguridad para exterior"></div>
+            <div class="product-content"><h3>Cámara Exterior WiFi</h3><p class="product-sub">Resistente a la intemperie</p><div class="specs"><span>5 MP (ultra HD)</span><span>Audio bidireccional</span><span>Detección de movimiento</span><span>Ángulo de visión 110°</span><span>Almacenamiento hasta 128 GB</span><span>Visión nocturna IR 20 m</span></div><div class="price">Bs 520</div><button class="btn btn-primary add-cart" onclick="addToCart('Cámara Exterior WiFi',520)">🛒 Agregar al carrito</button></div>
+          </article>
+          <article class="product-card" id="ofertas">
+            <div class="product-image"><span class="tag purple">Novedad</span><img src="imagen/camara_pt_4g_3mp_panel_solar_bateria_G118.png" alt="Cámara de seguridad solar"></div>
+            <div class="product-content"><h3>Cámara Solar 4G</h3><p class="product-sub">Sin internet fijo, sin límites</p><div class="specs"><span>4 MP (alta resolución)</span><span>Panel solar integrado</span><span>Audio bidireccional</span><span>Detección de movimiento</span><span>Visión nocturna IR 15 m</span><span>Conectividad 4G</span></div><div class="price">Bs 820</div><button class="btn btn-primary add-cart" onclick="addToCart('Cámara Solar 4G',820)">🛒 Agregar al carrito</button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section style="padding-top:0">
+      <div class="container">
+        <div class="app-banner">
+          <div class="app-photo" role="img" aria-label="Persona usando un teléfono móvil"></div>
+          <div><span class="section-kicker">Tu seguridad en tus manos</span><h2>Controla tus cámaras desde cualquier lugar</h2><p>Consulta desde tu celular, revisa las imágenes y recibe alertas cuando se detecte movimiento.</p><a class="btn btn-primary" href="#contacto">Solicitar asesoramiento</a></div>
+          <div class="app-checks"><span>Visualización en vivo</span><span>Notificaciones instantáneas</span><span>Grabación y reproducción</span><span>Consulta compatibilidad con tu celular</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
   <footer id="contacto">
     <div class="container footer-inner">
       <a class="brand" href="#inicio"><span class="brand-mark">◈</span><span>MIVAVISION<small>Tu seguridad, nuestra prioridad</small></span></a>
